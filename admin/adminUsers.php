@@ -9,7 +9,7 @@ include('includes/topbar.php');
 <div class="content-wrapper">
 
     <!-- User Modal -->
-    <div class="modal fade" id="addUserModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="addUserModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -46,7 +46,7 @@ include('includes/topbar.php');
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -64,18 +64,18 @@ include('includes/topbar.php');
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
+
     <div class="container">
         <div class="raw">
             <div class="col-md-12">
                 <!-- /.content-header -->
-        <?php
+                <?php
 
-        if(isset($_SESSION['status']))
-        {
-            echo "<h4>".$_SESSION['status']."</h4>";
-            unset($_SESSION['status']);
-        }
-        ?>
+                if (isset($_SESSION['status'])) {
+                    echo "<h4>" . $_SESSION['status'] . "</h4>";
+                    unset($_SESSION['status']);
+                }
+                ?>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Administrator Users</h3>

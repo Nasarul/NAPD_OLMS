@@ -1,6 +1,6 @@
 <?php
 require_once('../config/dbcon.php');
-// $upload_dir = '../uploads/teacher/';
+$upload_dir = '../uploads/lecture/';
 
 if (isset($_GET['sub_id'])) {
   $sub_id = $_GET['sub_id'];
@@ -14,12 +14,24 @@ if (isset($_GET['sub_id'])) {
 }
 
 if (isset($_POST['Submit'])) {
+  $course = $_POST['course_id'];
   $name = $_POST['name'];
   $code = $_POST['code'];
+
+  $lecture = $_FILES['lecture']['name'];
+  $lecture_type = $_FILES['lecture']['type'];
+  $lecture_size = $_FILES['lecture']['size'];
+  $lecture_temp_loc = $_FILES['lecture']['tmp_name'];
+  $lecture_store = "../uploads/lecture/" . $lecture;
+  move_uploaded_file($lecture_temp_loc, $lecture_store);
+  
+
   if (!isset($errorMsg)) {
     $sql = "UPDATE tblsubject
 									SET name = '" . $name . "',
+                  course_id = '" . $course . "'
                   code = '" . $code . "'
+                  lecture = '" . $lecture . "'
 				WHERE	sub_id=" . $sub_id;
     $result = mysqli_query($conn, $sql);
     if ($result) {
@@ -54,6 +66,12 @@ include_once('../includes/header.php')
         </div>
         <div class="card-body">
           <form class="" action="" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+              <label for="name">Course Code</label>
+              <input type="text" class="form-control" name="course_id" placeholder="Enter Subjects Name..." value="<?php echo $row['course_id']; ?>">
+            </div>
+
             <div class="form-group">
               <label for="name">Subject Name</label>
               <input type="text" class="form-control" name="name" placeholder="Enter Subjects Name..." value="<?php echo $row['name']; ?>">
@@ -62,6 +80,14 @@ include_once('../includes/header.php')
               <label for="name">Subject Code</label>
               <input type="text" class="form-control" name="code" placeholder="Enter Subjects code..." value="<?php echo $row['code']; ?>">
             </div>
+
+            <div class="form-group">
+              <label for="name">Lecture</label>
+              <input type="file" class="form-control" name="lecture" placeholder="Enter Subjects code..." value="<?php echo $upload_dir . $row['lecture'] ?>">
+            </div>
+
+        
+
 
             <div class="form-group">
               <button type="submit" name="Submit" class="btn btn-primary waves">Save</button>

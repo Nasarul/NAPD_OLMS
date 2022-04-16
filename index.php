@@ -9,6 +9,12 @@
     <title>NAPD OLMS</title>
 
     <style>
+        a {
+            text-decoration: none !important;
+            color: white;
+            width: 30%;
+        }
+
         body {
             background: #f1f1f1;
             font-family: 'Inconsolata', monospace;
@@ -31,7 +37,7 @@
             padding: 30px;
             margin: 2%;
             background: white;
-            width: 30%;
+            /* width: 80%; */
             border: 1px solid #d6d6d6;
             box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
             border-radius: 15px;
@@ -86,21 +92,24 @@
     <h5>(Select your options)</h5>
 
     <div class="box-wrap">
-
-        <div class="box">
-            <i class="fa-solid fa-user-gear"></i>
-            <p>Admin</p>
-        </div>
-
-        <div class="box">
-            <i class="fa-solid fa-user-tie"></i>
-            <p>Teacher</p>
-        </div>
-
-        <div class="box">
-            <i class="fa-solid fa-users"></i>
-            <p>Student</p>
-        </div>
+        <a href="admin/login/index.php">
+            <div class="box">
+                <i class="fa-solid fa-user-gear"></i>
+                <p>Admin</p>
+            </div>
+        </a>
+        <a href="teacher/login/index.php">
+            <div class="box">
+                <i class="fa-solid fa-user-tie"></i>
+                <p>Teacher</p>
+            </div>
+        </a>
+        <a href="student/login/index.php">
+            <div class="box">
+                <i class="fa-solid fa-users"></i>
+                <p>Student</p>
+            </div>
+        </a>
     </div>
 
 </body>

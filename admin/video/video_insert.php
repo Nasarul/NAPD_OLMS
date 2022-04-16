@@ -9,7 +9,7 @@ include_once('../includes/header.php')
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="btn btn-info" href="display_video.php"><i class="fa-solid fa-photo-film"></i>Display Video</a></li>
+          <li class="nav-item"><a class="btn btn-info" href="display_video.php"><i class="fa-solid fa-photo-film"></i> Display Video</a></li>
           <li class="nav-item"><a class="btn btn-outline-danger" href="../index.php"><i class="fa fa-sign-out-alt"></i>Back to Dashboard</a></li>
         </ul>
       </div>
@@ -34,7 +34,7 @@ include_once('../includes/header.php')
               </div>
               <div class="form-group">
                 <label for="name">Upload Video Thumbnail</label>
-                <input type="file" class="form-control" name="Thumbnail" placeholder="Enter video thumbnail" value="">
+                <input type="file" class="form-control" name="thumbnail" placeholder="Enter video thumbnail" value="">
               </div>
               <div class="form-group">
                 <label for="image">Upload Video</label>
@@ -68,7 +68,7 @@ include_once('../includes/header.php')
     $video_store = "../uploads/video/" . $video;
     move_uploaded_file($video_temp_loc, $video_store);
 
-    $sql = "INSERT INTO tblvideo(title,description,thumbnail,video)
+    $sql = "INSERT INTO video (title,description,thumbnail,video)
       values('$title','$description','$thumbnail','$video')";
     $query = mysqli_query($conn, $sql);
   }

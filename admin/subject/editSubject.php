@@ -14,7 +14,7 @@ if (isset($_GET['sub_id'])) {
 }
 
 if (isset($_POST['Submit'])) {
-  $course = $_POST['course_id'];
+  $course = $_POST['course_name'];
   $name = $_POST['name'];
   $code = $_POST['code'];
 
@@ -29,10 +29,11 @@ if (isset($_POST['Submit'])) {
   if (!isset($errorMsg)) {
     $sql = "UPDATE tblsubject
 									SET name = '" . $name . "',
-                  course_id = '" . $course . "'
+                  course_name = '" . $course . "'
                   code = '" . $code . "'
                   lecture = '" . $lecture . "'
 				WHERE	sub_id=" . $sub_id;
+
     $result = mysqli_query($conn, $sql);
     if ($result) {
       $successMsg = 'New record updated successfully';
@@ -68,8 +69,8 @@ include_once('../includes/header.php')
           <form class="" action="" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-              <label for="name">Course Code</label>
-              <input type="text" class="form-control" name="course_id" placeholder="Enter Subjects Name..." value="<?php echo $row['course_id']; ?>">
+              <label for="name">Course Name</label>
+              <input type="text" class="form-control" name="course_name" placeholder="Enter Subjects Name..." value="<?php echo $row['course_name']; ?>">
             </div>
 
             <div class="form-group">
@@ -85,9 +86,6 @@ include_once('../includes/header.php')
               <label for="name">Lecture</label>
               <input type="file" class="form-control" name="lecture" placeholder="Enter Subjects code..." value="<?php echo $upload_dir . $row['lecture'] ?>">
             </div>
-
-        
-
 
             <div class="form-group">
               <button type="submit" name="Submit" class="btn btn-primary waves">Save</button>

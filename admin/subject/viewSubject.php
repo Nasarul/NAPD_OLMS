@@ -1,6 +1,6 @@
 <?php
 require_once('../config/dbcon.php');
-// $upload_dir = '../uploads/teacher/';
+$upload_dir = '../uploads/lecture/';
 
 if (isset($_GET['sub_id'])) {
   $sub_id = $_GET['sub_id'];
@@ -34,7 +34,7 @@ include('../includes/header.php')
             <div class="col-md">
 
             <h5 class="form-control"><i class="fa-solid fa-book"></i>
-                <span><?php echo $row['course_id'] ?></span>
+                <span><?php echo $row['course_name'] ?></span>
                 </i>
               </h5>
               <h5 class="form-control"><i class="fa-solid fa-book"></i>

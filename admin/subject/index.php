@@ -30,7 +30,7 @@ include_once('../includes/header.php')
               <thead>
                 <tr>
                   <!-- <th style="text-align:center">SL.</th> -->
-                  <th style="text-align:center">Course Code</th>
+                  <th style="text-align:center">Course Name</th>
                   <th style="text-align:center">Subjects Code</th>
                   <th style="text-align:center">Subject Name</th>                  
                   <th style="text-align:center">Actions</th>
@@ -45,11 +45,11 @@ include_once('../includes/header.php')
                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
-                    <td><?php echo $row['course_id'] ?></td>
-                      <!-- <td><?php echo $row['sub_id'] ?></td> -->
+                    <td><?php echo $row['course_name'] ?></td>
                       <td><?php echo $row['code'] ?></td>
                       <td><?php echo $row['name'] ?></td>
-
+                      <!-- <td><?php echo $row['lecture'] ?></td> -->
+                      
                       <td class="text-center">
                         <a href="viewSubject.php?sub_id=<?php echo $row['sub_id'] ?>" class="btn btn-success" title="View Subject"><i class="fa fa-eye"></i></a>
                         <a href="editSubject.php?sub_id=<?php echo $row['sub_id'] ?>" class="btn btn-info" title="Edit Subject"><i class="fa fa-user-edit"></i></a>

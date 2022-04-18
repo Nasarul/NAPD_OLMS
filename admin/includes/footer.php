@@ -1,7 +1,5 @@
  <style>
 
-
-
 #footer {
     padding: 5px;
 background-color: #C0C0C0; */

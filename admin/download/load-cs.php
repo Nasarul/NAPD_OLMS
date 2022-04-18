@@ -13,7 +13,7 @@
 		}
 	}else if($_POST['type'] == "subjectData"){
 
-		$sql = "SELECT * FROM tblsubject WHERE course_id = {$_POST['id']}";
+		$sql = "SELECT * FROM tblsubject WHERE course_name = {$_POST['id']}";
 
 		$query = mysqli_query($conn,$sql) or die("Query Unsuccessful.");
 

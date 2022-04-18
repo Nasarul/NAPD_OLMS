@@ -28,14 +28,14 @@ include('../includes/header.php')
             <table id="example" class="table table-striped table-bordered" style="width:100%">
               <thead>
                 <tr>
-                  <th>SL.</th>
+                  <!-- <th>SL.</th> -->
                   <th style="text-align:center">Image</th>
                   <th style="text-align:center">Name</th>
                   <th style="text-align:center">Designation</th>
                   <th style="text-align:center">Organization</th>
                   <!-- not displayed email and mobile field -->
-                  <!-- <th style="text-align:center">E-Mail</th>
-                  <th style="text-align:center">Mobile</th> -->
+                  <!-- <th style="text-align:center">E-Mail</th>-->
+                  <th style="text-align:center">Mobile</th>
                   <th style="text-align:center">Actions</th>
                 </tr>
               </thead>
@@ -48,14 +48,14 @@ include('../includes/header.php')
                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
-                      <td><?php echo $row['tech_id'] ?></td>
+                      <!-- <td><?php echo $row['tech_id'] ?></td> -->
                       <td style="text-align:center"><img src="<?php echo $upload_dir . $row['image'] ?>" height="40"></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['designation'] ?></td>
                       <td><?php echo $row['organization'] ?></td>
                       <!-- not displayed email and mobile field -->
-                      <!-- <td><?php echo $row['email'] ?></td>
-                      <td><?php echo $row['mobile'] ?></td> -->
+                      <!-- <td><?php echo $row['email'] ?></td>-->
+                      <td><?php echo $row['mobile'] ?></td>
                       <td class="text-center">
                         <a href="viewTeacher.php?tech_id=<?php echo $row['tech_id'] ?>" class="btn btn-success" title="View Profile"><i class="fa fa-eye"></i></a>
                         <a href="editTeacher.php?tech_id=<?php echo $row['tech_id'] ?>" class="btn btn-info" title="Edit Profile"><i class="fa fa-user-edit"></i></a>

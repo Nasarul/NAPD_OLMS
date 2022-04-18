@@ -30,7 +30,7 @@ include_once('../includes/header.php')
               <div class="form-group">
                
               <div class="form-group">
-                <label for="name">Course Code</label>
+                <label for="name">Course Name</label>
                 <input type="text" class="form-control" name="course_name" placeholder="Enter Subjects code" value="">
               </div>
 

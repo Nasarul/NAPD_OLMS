@@ -46,10 +46,10 @@ include('../includes/header.php')
                 </i>
               </h5>
               
-              <h5 class="form-control"><i class="fa-solid fa-tags"></i>
-              <file src="<?php echo $upload_dir . $row['lecture'] ?>" height="200">
+              <!-- <h5 class="form-control"><i class="fa-solid fa-tags"></i>
+              <file src="<?php echo $upload_dir . $row['lecture'] ?>" height="500">
                 </i>
-              </h5>
+              </h5> -->
 
 
               <a class="btn btn-outline-danger" href="index.php"><i class="fa fa-sign-out-alt"></i><span>Back to Home</span></a>

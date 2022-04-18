@@ -25,15 +25,42 @@ if (isset($_POST['Submit'])) {
   $lecture_store = "../uploads/lecture/" . $lecture;
   move_uploaded_file($lecture_temp_loc, $lecture_store);
   
+  // test fatal case start ??
+
+  // if ($lecture) {
+
+  //   $imgExt = strtolower(pathinfo($lecture, PATHINFO_EXTENSION));
+
+  //   $allowExt  = array('jpeg', 'jpg', 'png', 'gif');
+
+  //   $userfile = time() . '_' . rand(1000, 9999) . '.' . $imgExt;
+
+  //   if (in_array($imgExt, $allowExt)) {
+
+  //     if ($imgSize < 90000000000000000) {
+  //       unlink($upload_dir . $row['lecture']);
+  //       move_uploaded_file($lecture_temp_loc, $lecture_store);
+  //     } else {
+  //       $errorMsg = 'file too large';
+  //     }
+  //   } else {
+  //     $errorMsg = 'Please select a valid image';
+  //   }
+  // } else {
+  //   $userfile = $row['lecture'];
+  // }
+
+
+// test fatal case end ??
+
 
   if (!isset($errorMsg)) {
     $sql = "UPDATE tblsubject
 									SET name = '" . $name . "',
-                  course_name = '" . $course . "'
-                  code = '" . $code . "'
+                  course_name = '" . $course . "',
+                  code = '" . $code . "',
                   lecture = '" . $lecture . "'
 				WHERE	sub_id=" . $sub_id;
-
     $result = mysqli_query($conn, $sql);
     if ($result) {
       $successMsg = 'New record updated successfully';

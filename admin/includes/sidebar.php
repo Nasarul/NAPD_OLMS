@@ -71,7 +71,7 @@
         <li class="nav-header">Maintenance</li>
         
         <li class="nav-item dropdown">
-          <a href="course/index.php" class="nav-link nav-course">
+          <a href="download/index.php" class="nav-link nav-course">
           <i class="fa-solid fa-file-circle-plus"></i>
             <p>
               Upload lectur file
@@ -95,7 +95,7 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a href="adminUsers.php" class="nav-link nav-course">
+          <a href="#" class="nav-link nav-course">
           <i class="fa-solid fa-user-tie"></i>
             <p>
               Add Teacher user
@@ -103,7 +103,7 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a href="adminUsers.php" class="nav-link nav-course">
+          <a href="#" class="nav-link nav-course">
             <i class="fa-solid fa-user-plus"></i>
             <p>
               Add Student user

@@ -29,7 +29,7 @@ include_once('../includes/header.php')
             <table id="example" class="table table-striped table-bordered" style="width:100%">
               <thead>
                 <tr>
-                  <!-- <th>SL.</th> -->
+                  <th>SL.</th>
                   <!-- <th>Roll</th> -->
                   <th>Image</th>
                   <th>Name</th>
@@ -45,12 +45,14 @@ include_once('../includes/header.php')
 
               <tbody>
                 <?php
+                $i=1;
                 $sql = "SELECT * FROM tblStudent";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result)) {
                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
+                      <td><?php echo $i ?></td>
                       <!-- <td><?php echo $row['stu_id'] ?></td> -->                    
                       <!-- <td><?php echo $row['roll'] ?></td> -->
                       <td><img src="<?php echo $upload_dir . $row['image'] ?>" height="40"></td>
@@ -69,6 +71,7 @@ include_once('../includes/header.php')
                       </td>
                     </tr>
                 <?php
+                $i++;
                   }
                 }
                 ?>

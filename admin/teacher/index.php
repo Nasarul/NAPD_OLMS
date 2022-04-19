@@ -28,7 +28,7 @@ include('../includes/header.php')
             <table id="example" class="table table-striped table-bordered" style="width:100%">
               <thead>
                 <tr>
-                  <!-- <th>SL.</th> -->
+                  <th>SL.</th>
                   <th style="text-align:center">Image</th>
                   <th style="text-align:center">Name</th>
                   <th style="text-align:center">Designation</th>
@@ -42,13 +42,14 @@ include('../includes/header.php')
 
               <tbody>
                 <?php
+                $i=1;
                 $sql = "SELECT * FROM tblteacher";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result)) {
                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
-                      <!-- <td><?php echo $row['tech_id'] ?></td> -->
+                      <td><?php echo $i ?></td>
                       <td style="text-align:center"><img src="<?php echo $upload_dir . $row['image'] ?>" height="40"></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['designation'] ?></td>
@@ -63,6 +64,7 @@ include('../includes/header.php')
                       </td>
                     </tr>
                 <?php
+                $i++;
                   }
                 }
                 ?>

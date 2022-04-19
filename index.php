@@ -92,7 +92,7 @@
     <h5>(Select your options)</h5>
 
     <div class="box-wrap">
-        <a href="admin/login/index.php">
+        <a href="./admin/login/index.php">
             <div class="box">
                 <i class="fa-solid fa-user-gear"></i>
                 <p>Admin</p>
@@ -104,7 +104,7 @@
                 <p>Teacher</p>
             </div>
         </a>
-        <a href="student/login/index.php">
+        <a href="/student/login/index.php">
             <div class="box">
                 <i class="fa-solid fa-users"></i>
                 <p>Student</p>

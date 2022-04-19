@@ -39,13 +39,14 @@ include_once('../includes/header.php')
               
               <tbody>
                 <?php
+                $i=1;
                 $sql = "SELECT * FROM tblcourse";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result)) {
                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
-                      <td><?php echo $row['course_id'] ?></td>
+                      <td><?php echo $i ?></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['duration'] ?></td>
                     
@@ -56,6 +57,7 @@ include_once('../includes/header.php')
                       </td>
                     </tr>
                 <?php
+                $i++;
                   }
                 }
                 ?>

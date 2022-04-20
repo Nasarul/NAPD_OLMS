@@ -8,7 +8,7 @@ if(isset($_GET['sub_id'])){
     $stat->execute();
     $data = $stat->fetch();
 
-    $filepath = '../admin/uplads/lecture/' .$data['filename'];
+    $filepath = '../../admin/uploads/lecture/' .$data['filename'];
 
     // if(file_exists($file)){
     //     header('Content-Description: '.$data['description']);

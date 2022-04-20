@@ -12,9 +12,9 @@
     }
 
     h1 {
-      background-color: gray;
+      background-color: dodgerblue;
       text-align: center;
-      color: black;
+      color: #FFFFFF;
       font-size: 48px;
       padding: 10px;
       margin-top: 0px;
@@ -27,7 +27,7 @@
     li {
       float: left;
       margin-left: 15px;
-      margin-top: 25px;
+      margin-top: 40px;
     }
 
     p {
@@ -45,11 +45,11 @@
 </head>
 
 <?php
-include_once('../includes/header.php');
+include('../includes/header.php');
 ?>
 
 <body>
-  <h1>Video Sharing Site</h1>
+  <h1>Class Video</h1>
   <ul>
     <a class="btn btn-info" href="video_insert.php"><i class="fa-solid fa-photo-film"></i> Insert more Video</a>
     <a class="btn btn-outline-danger" href="../index.php"><i class="fa fa-sign-out-alt"></i>Back to Dashboard</a>

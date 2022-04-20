@@ -66,10 +66,20 @@
           <a href="course/index.php" class="nav-link nav-course">
           <i class="fa-solid fa-file-circle-plus"></i>
             <p>
-              Download lecture file
+              Download lecture file 1
             </p>
           </a>
         </li>
+        <li class="nav-item dropdown">
+          <a href="download/index.php" class="nav-link nav-course">
+          <i class="fa-solid fa-file-video"></i>
+            <p>
+            Download lecture file 2
+            </p>
+          </a>
+        </li>
+   
+        
         <li class="nav-item dropdown">
           <a href="video/video_insert.php" class="nav-link nav-course">
           <i class="fa-solid fa-file-video"></i>
@@ -78,8 +88,6 @@
             </p>
           </a>
         </li>
-   
-        
       </ul>
       <!-- <ul class="nav nav-treeview">
                 <li class="nav-item">

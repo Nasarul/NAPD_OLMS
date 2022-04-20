@@ -9,14 +9,14 @@ include('../includes/header.php');
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Download Lecture</title>
+	<title>Upload Lecture</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div id="main">
 		<div id="header">
-			<h1>Download Lecture file</h1>
+			<h1>Upload Lecture file</h1>
 		</div>
 		<div id="content">
 			<form method="">
@@ -30,8 +30,8 @@ include('../includes/header.php');
 					<option value="" selected>Select subject</option>
 				</select>
 <br>
-<br>
-				<button type="button" download="<?php echo $_FILE_name;?>" class="btn btn-primary">Download Lacture</button>
+<br><button type="button" upload="<?php echo $_FILE_name;?>" class="btn btn-primary">Upload Lacture</button>
+				<button type="button" download="<?php echo $_FILE_name;?>" class="btn btn-info">Download Lacture</button>
 			</form>
 		</div>
 	</div>

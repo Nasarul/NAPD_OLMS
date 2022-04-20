@@ -16,7 +16,7 @@ body{
 #header{
   background: #14598d;
   color: #fff;
-  height: 130px;
+  height: 90px;
 }
 h1{
   line-height: 51px;
@@ -31,7 +31,7 @@ h1{
 }
 
 label{
-  color: crimson;
+  color: rgb(0, 0, 0);
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;

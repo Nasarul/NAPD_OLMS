@@ -1,88 +1,91 @@
 <?php
 include('deleteStudent.php');
-include_once('../includes/header.php')
+// include('../includes/topbar.php');
+include('../includes/header.php');
+// include('../includes/sidebar.php');
+// include('../includes/footer.php');
 ?>
 
 <body>
-
-  <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-    <div class="container">
-      <a class="navbar-brand">STUDENT'S INFORMATION</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="btn btn-primary" href="addStudent.php"><i class="fa fa-user-plus"></i>Add Student's Info</a></li>
-          <li class="nav-item"><a class="btn btn-outline-danger" href="../index.php"><i class="fa fa-sign-out-alt"></i>Back to Dashboard</a></li>
-        </ul>
+  
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+      <div class="container">
+        <a class="navbar-brand">STUDENT'S INFORMATION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"></ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="btn btn-primary" href="addStudent.php"><i class="fa fa-user-plus"></i>Add Student's Info</a></li>
+            <li class="nav-item"><a class="btn btn-outline-danger" href="../index.php"><i class="fa fa-sign-out-alt"></i>Back to Dashboard</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-20">
-        <div class="card">
-          <div class="card-body">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-              <thead>
-                <tr>
-                  <th>SL.</th>
-                  <!-- <th>Roll</th> -->
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th>Designation</th>
-                  <th>Organization</th>
-                  <!-- <th>E-Mail</th> -->
-                  <th>Mobile</th>
-                  <!-- <th>Date of Birth</th>
+    </nav>
+  
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>SL.</th>
+                    <!-- <th>Roll</th> -->
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Organization</th>
+                    <!-- <th>E-Mail</th> -->
+                    <th>Mobile</th>
+                    <!-- <th>Date of Birth</th>
                   <th>Blood Group</th> -->
-                  <th>Actions</th>
-                </tr>
-              </thead>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                <?php
-                $i=1;
-                $sql = "SELECT * FROM tblStudent";
-                $result = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($result)) {
-                  while ($row = mysqli_fetch_assoc($result)) {
-                ?>
-                    <tr>
-                      <td><?php echo $i ?></td>
-                      <!-- <td><?php echo $row['stu_id'] ?></td> -->                    
-                      <!-- <td><?php echo $row['roll'] ?></td> -->
-                      <td><img src="<?php echo $upload_dir . $row['image'] ?>" height="40"></td>
-                      <td><?php echo $row['name'] ?></td>
-                      <td><?php echo $row['designation'] ?></td>
-                      <td><?php echo $row['organization'] ?></td>
-                      <!-- <td><?php echo $row['email'] ?></td> -->
-                      <td><?php echo $row['mobile'] ?></td>
-                      <!-- <td><?php echo $row['dob'] ?></td>
+                <tbody>
+                  <?php
+                  $i = 1;
+                  $sql = "SELECT * FROM tblStudent";
+                  $result = mysqli_query($conn, $sql);
+                  if (mysqli_num_rows($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                  ?>
+                      <tr>
+                        <td><?php echo $i ?></td>
+                        <!-- <td><?php echo $row['stu_id'] ?></td> -->
+                        <!-- <td><?php echo $row['roll'] ?></td> -->
+                        <td><img src="<?php echo $upload_dir . $row['image'] ?>" height="40"></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['designation'] ?></td>
+                        <td><?php echo $row['organization'] ?></td>
+                        <!-- <td><?php echo $row['email'] ?></td> -->
+                        <td><?php echo $row['mobile'] ?></td>
+                        <!-- <td><?php echo $row['dob'] ?></td>
                       <td><?php echo $row['bg'] ?></td> -->
 
-                      <td class="text-center">
-                        <a href="viewStudent.php?stu_id=<?php echo $row['stu_id'] ?>" class="btn btn-success" title="View Profile"><i class="fa fa-eye"></i></a>
-                        <a href="editStudent.php?stu_id=<?php echo $row['stu_id'] ?>" class="btn btn-info" title="Edit Profile"><i class="fa fa-user-edit"></i></a>
-                        <a href="index.php?delete=<?php echo $row['stu_id'] ?>" class="btn btn-danger" title="Delete Profile" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt"></i></a>
-                      </td>
-                    </tr>
-                <?php
-                $i++;
+                        <td class="text-center">
+                          <a href="viewStudent.php?stu_id=<?php echo $row['stu_id'] ?>" class="btn btn-success" title="View Profile"><i class="fa fa-eye"></i></a>
+                          <a href="editStudent.php?stu_id=<?php echo $row['stu_id'] ?>" class="btn btn-info" title="Edit Profile"><i class="fa fa-user-edit"></i></a>
+                          <a href="index.php?delete=<?php echo $row['stu_id'] ?>" class="btn btn-danger" title="Delete Profile" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt"></i></a>
+                        </td>
+                      </tr>
+                  <?php
+                      $i++;
+                    }
                   }
-                }
-                ?>
-              </tbody>
-            </table>
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  
   <!-- Pagenation--->
   <nav aria-label="Page navigation example" id="pagination">
     <ul class="pagination justify-content-center my-3">
